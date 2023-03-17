@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Binding_Examples.MainPage">
+
+    <Grid
+        RowDefinitions="*, 20">
+        <ListView x:Name="lstMyList"
+                  BackgroundColor="Transparent"
+                  SeparatorColor="Silver"
+                  RowHeight="80"
+                  SelectedItem="UserSelected">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid
+                            RowDefinitions="*, *"
+                            ColumnDefinitions="80, *"
+                            HeightRequest="80"
+                            >
+
+                            <Image 
+                                WidthRequest="80" 
+                                HeightRequest="80" 
+                                Grid.Row="0" 
+                                Grid.RowSpan="2" 
+                                Source="{Binding Avatar}"/>
+                            <Label 
+                                VerticalOptions="End" 
+                                Grid.Row="0" 
+                                Grid.Column="1" 
+                                Text="{Binding Name}"/>
+                            <Label 
+                                VerticalOptions="Start" 
+                                Grid.Row="1" 
+                                Grid.Column="1" 
+                                Text="{Binding UserName}"/>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+
+</ContentPage>
